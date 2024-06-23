@@ -20669,6 +20669,15 @@ class basic_json // NOLINT(cppcoreguidelines-special-member-functions,hicpp-spec
         return m_data.m_type == value_t::array;
     }
 
+    bool isMember() __attribute__((alias("is_number")));
+    bool isArray() __attribute__((alias("is_array")));
+    bool isNull() __attribute__((alias("is_null")));
+    bool isObject() __attribute__((alias("is_object")));
+    bool isBool() __attribute__((alias("is_boolean")));
+    bool isInt() __attribute__((alias("is_number_integer")));
+    bool isFloat() __attribute__((alias("is_number_float")));
+    bool isString() __attribute__((alias("is_string")));
+
     /// @brief return whether value is a string
     /// @sa https://json.nlohmann.me/api/basic_json/is_string/
     constexpr bool is_string() const noexcept
